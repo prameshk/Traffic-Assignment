@@ -6,4 +6,4 @@ This program solves the user equilibrium and stochastic user equilibrium for the
 #How to Run
 
 
-Use "testing" or "ta" to run all the methods in the convex_combination file
+Use "testing" or "ta" to run traffic assignment
