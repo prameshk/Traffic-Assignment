@@ -33,6 +33,24 @@ writeUEresults()
 # How to cite
 If you are using this program for your research, you can cite this code as below:
 
+Pramesh Kumar. (2019, October 10). prameshk/Traffic-Assignment: Static Traffic Assignment using User Equilibrium and Stochastic User Equilibrium- Python Code (Version 2.0). Zenodo. http://doi.org/10.5281/zenodo.3479554
+
+```
+@software{pramesh_kumar_2019_3479554,
+  author       = {Pramesh Kumar},
+  title        = {{prameshk/Traffic-Assignment: Static Traffic 
+                   Assignment using User Equilibrium and Stochastic
+                   User Equilibrium- Python Code}},
+  month        = oct,
+  year         = 2019,
+  publisher    = {Zenodo},
+  version      = {2.0},
+  doi          = {10.5281/zenodo.3479554},
+  url          = {https://doi.org/10.5281/zenodo.3479554}
+}
+```
+
+
 ## Questions
 Feel free to send an email to [kumar372@umn.edu](kumar372@umn.edu) if you have questions or concerns/
 
