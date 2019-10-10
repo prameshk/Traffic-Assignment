@@ -16,4 +16,19 @@ Open the script "ta.py". Set the "inputLocation"  to the the directory where the
 assignment(loading, algorithm, accuracy = default, maxIter=default)
 ```
  - *Loading* can be "deterministic" or "stochastic". The deterministic loading uses all or nothing assignment whereas stochastic loading uses Dial's algorithm to produce auxilliary flows.
+ 
+ - *algorithm* can be "MSA" or "FW". MSA refers to method of successive averages and FW refers to Frank-Wolfe method to compute the step size.
+ 
+ - *accuracy* is the tolerance parameter used to stop the algorithm when the solution is close to UE or SUE. The default value is set of 0.01 (i.e., 1%)
+ 
+ - *maxIter* is the maximum number of iterations to stop the program if the program is not able to reach the equilibrium solution for given accuracy. The default value of 10000.
+ 
+ 
+```
+writeUEresults()
+```
+-Use this method to write the UE results after the assignment is finished. You can open the output file in notepad or MS excel. 
+
+
+
 
