@@ -27,8 +27,18 @@ assignment(loading, algorithm, accuracy = default, maxIter=default)
 ```
 writeUEresults()
 ```
--Use this method to write the UE results after the assignment is finished. You can open the output file in notepad or MS excel. 
+ - Use this method to write the UE results after the assignment is finished. You can open the output file in notepad or MS excel. 
+ 
+ 
+# How to cite
+If you are using this program for your research, you can cite this code as below:
 
+## Questions
+Feel free to send an email to [kumar372@umn.edu](kumar372@umn.edu) if you have questions or concerns
+
+
+## Future releases
+Future releases will have implementation of other traffic assignment algorithms such as Gradient Projection, Origin-based assignment, and Algorithm B. 
 
 
 
