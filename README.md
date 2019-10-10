@@ -12,4 +12,5 @@ Navigate to the network folder (e.g., Sioux Falls network) and check the demand 
 3. #### Running the script :
 Open the script "ta.py". Set the "inputLocation"  to the the directory where the network is stored. Use the following functions to perform operations:
 
- - kdj
+ - assignment(loading, algorithm, accuracy = default, maxIter=default)
+   --
