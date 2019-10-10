@@ -3,6 +3,6 @@ Traffic-Assignment is a repository for static traffic assignment python code. Cu
 
 
 
-# How to run static traffic assignment
+# How to run traffic assignment
 1. Data Preparation
 Clone the repository on a local directory and open the script named "ta.py
