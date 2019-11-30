@@ -167,7 +167,9 @@ def findAlpha(x_bar):
 
     ******************* Need to be revised: Currently not working.**********************************************
     '''
-    alpha = 0.0
+    #alpha = 0.0
+
+
     def df(alpha):
         sum_derivative = 0 ## this line is the derivative of the objective function.
         for l in linkSet:
@@ -176,11 +178,28 @@ def findAlpha(x_bar):
             tmpCost = linkSet[l].fft*(1 + linkSet[l].alpha*math.pow((tmpFlow*1.0/linkSet[l].capacity), linkSet[l].beta))
             sum_derivative = sum_derivative + (x_bar[l] - linkSet[l].flow)*tmpCost
         return sum_derivative
-    print(df)
-    sol = fsolve(df, 0.1)
-    print(sol)
-    print(sol)
-    return sol #ax(0, min(1, sol.x[0]))
+    sol = optimize.root(df, np.array([0.1]))
+    sol2 = fsolve(df, np.array([0.1]))
+    #print(sol.x[0], sol2[0])
+    return max(0.1, min(1, sol2[0]))
+    '''
+    def int(alpha):
+        tmpSum = 0
+        for l in linkSet:
+            tmpFlow = (linkSet[l].flow + alpha*(x_bar[l] - linkSet[l].flow))
+            tmpSum = tmpSum + linkSet[l].fft*(tmpFlow + linkSet[l].alpha * (math.pow(tmpFlow, 5) / math.pow(linkSet[l].capacity, 4)))
+        return tmpSum
+
+    bounds = ((0, 1),)
+    init = np.array([0.7])
+    sol = optimize.minimize(int, x0=init, method='SLSQP', bounds = bounds)
+
+    print(sol.x, sol.success)
+    if sol.success == True:
+        return sol.x[0]#max(0, min(1, sol[0]))
+    else:
+        return 0.2
+    '''
 
 def tracePreds(dest):
     '''
@@ -335,7 +354,7 @@ def assignment(loading, algorithm, accuracy = 0.01, maxIter=100):
             alpha = (1.0/it)
         elif algorithm == "FW":
             alpha = findAlpha(x_bar)
-            print(alpha, x_bar)
+            #print("alpha", alpha)
         else:
             print("Terminating the program.....")
             print("The solution algorithm ", algorithm, " does not exist!")
@@ -345,6 +364,7 @@ def assignment(loading, algorithm, accuracy = 0.01, maxIter=100):
         updateTravelTime()
         if loading == "deterministic":
             SPTT, x_bar = loadAON()
+            #print([linkSet[a].flow * linkSet[a].cost for a in linkSet])
             TSTT = round(sum([linkSet[a].flow * linkSet[a].cost for a in linkSet]), 3)
             SPTT = round(SPTT, 3)
             gap = round(abs((TSTT / SPTT) - 1), 5)
@@ -386,6 +406,6 @@ def writeUEresults():
 
 
 
-assignment("deterministic", "MSA", accuracy = 0.01, maxIter=10000)
+assignment("deterministic", "FW", accuracy = 0.001, maxIter=1000)
 writeUEresults()
 #assignment("stochastic", "MSA", accuracy = 0.01, maxIter=100)
