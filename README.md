@@ -1,5 +1,5 @@
 # Traffic-Assignment
-Traffic-Assignment is a repository for static traffic assignment python code. Currently, the program can solve the static traffic assignment problem using user equilibrium (UE) and stochastic user equilibrium (SUE) for the city network. The solution can be achieved both using MSA and Frank-Wolfe algorithm.
+Traffic-Assignment is a repository for static traffic assignment python code. Currently, the program can solve the static traffic assignment problem using user equilibrium (UE) and stochastic user equilibrium (SUE) for the city network. The solution can be achieved both using Method of Successive Averages (MSA) and Frank-Wolfe (F-W) algorithm.
 
 
 
@@ -7,7 +7,7 @@ Traffic-Assignment is a repository for static traffic assignment python code. Cu
 1. #### Clone the repository on a local directory  
 
 2. #### Data Preparation : 
-Navigate to the network folder (e.g., Sioux Falls network) and check the demand and network file format. For more network data, please refer to [TNTP](https://github.com/bstabler/TransportationNetworks). Note that the data format used by the current script is different from the data available on this website. Use script "dataPreparation.py" to create a network suitable to this script.
+Navigate to the "network" folder (e.g., Sioux Falls network) and check the demand and network file format. For more network data, please refer to [TNTP](https://github.com/bstabler/TransportationNetworks). Note that the data format used by the current script is different from the data available on this website. Use script "dataPreparation.py" to create a network suitable for this script.
 
 3. #### Running the script :
 Open the script "ta.py". Set the "inputLocation"  to the directory where the network is stored. Use the following methods to perform operations:
@@ -31,7 +31,7 @@ writeUEresults()
  
  
 # How to cite
-If you are using this program for your research, you can cite this code as below:
+If you are using this program for your research, please cite this code as below:
 ```
 Pramesh Kumar. (2019, October 10). prameshk/Traffic-Assignment: Static Traffic Assignment using User Equilibrium and Stochastic User Equilibrium- Python Code (Version 2.0). Zenodo. http://doi.org/10.5281/zenodo.3479554
 ```
